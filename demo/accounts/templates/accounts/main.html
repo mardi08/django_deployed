@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      {% load staticfiles %}
+      <link rel="stylesheet" type="text/css" href={% static 'accounts/global.css' %}>
+    <style>
+      #map {
+        height: 400px;
+        width: 100%;
+          position: relative;
+          top: 100px;
+       }
+    </style>
+
+  </head>
+  <body>
+      <h1>Time</h1>
+    <hr>
+    <div>
+        <clock>
+        <p id="time"></p>
+        </clock>
+    </div>
+
+    <text>Map with Marker</text>
+    <hr>
+
+    <div id="map"></div>
+
+    <script>
+        var myVar = setInterval(myTimer, 1000);
+        function myTimer(){
+            var time = new Date();
+            document.getElementById("time").innerHTML = time.toLocaleTimeString();
+        }
+    </script>
+
+    <div id="map"></div>
+    <script>
+      function initMap() {
+        var uluru = {lat: 40.425, lng: -86.908};
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 13,
+          center: uluru
+        });
+        var marker = new google.maps.Marker({
+          position: uluru,
+          map: map
+        });
+      }
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTenrsIz29JczVkJEhuxYSfSs59oDhmlM&callback=initMap">
+    </script>
+
+  </body>
+</html>
