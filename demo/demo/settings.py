@@ -25,7 +25,10 @@ SECRET_KEY = '*_%^d_9!3#3gvw1j7-k4qo%+lsbwa37!9!5rip4gkky*u%u@qb'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['time-map7-1.herokuapp.com']
+ALLOWED_HOSTS = [
+    'time-map7-1.herokuapp.com',
+    '127.0.0.1',
+]
 
 
 # Application definition
@@ -48,6 +51,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'demo.urls'
