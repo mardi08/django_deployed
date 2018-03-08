@@ -1,0 +1,23 @@
+dist: trusty
+language: python
+python:
+- '2.7.14'
+addons:
+    firefox 56.0
+before_install:
+- sudo apt-get install xvfb
+- wget https://github.com/mozilla/geckodriver/releases/download/v0.19.0/geckodriver-v0.19.0-linux64.tar.gz
+- mkdir geckodriver
+- sudo tar -xzf geckodriver-v0.19.0-linux64.tar.gz -C /usr/bin
+- sudo chmod a+x /usr/bin/geckodriver
+- export DISPLAY=:99.0
+before_script:
+- sh -e /etc/init.d/xvfb start
+- sleep 5 # give xvfb some time to start
+script:
+- python manage.py 
+deploy:
+- provider: heroku
+  api_key: ...
+  app:
+     master: add-form-cam-mardi
