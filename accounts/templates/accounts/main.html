@@ -36,6 +36,10 @@
     </script>
 
     <div id="map"></div>
+    <div>
+        <h2>GEO API</h2>
+        <p>Your ip address is <strong>{{ ip }}</strong>, and you are probably in <strong>{{ country }}</strong> right now which had the <strong>{{ capital }}</strong>.</p>
+    </div>
     <script>
       function initMap() {
         var uluru = {lat: 40.425, lng: -86.908};
@@ -52,6 +56,7 @@
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBTenrsIz29JczVkJEhuxYSfSs59oDhmlM&callback=initMap">
     </script>
+
 
   </body>
 </html>
