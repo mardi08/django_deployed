@@ -12,6 +12,9 @@ def home(request):
     return render(request, 'accounts/main.html', {
         'ip': geodata['ip'],
         'country': geodata['country_name'],
-        'capital': geodata['location']['capital']
+        'city': geodata['city'],
+        'state': geodata['region_name'],
+        'capital': geodata['location']['capital'],
+        'language': geodata['location']['languages'][0]['native'],
     })
     # return render(request, 'accounts/main.html')

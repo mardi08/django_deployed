@@ -37,8 +37,10 @@
 
     <div id="map"></div>
     <div>
-        <h2>GEO API</h2>
-        <p>Your ip address is <strong>{{ ip }}</strong>, and you are probably in <strong>{{ country }}</strong> right now which had the <strong>{{ capital }}</strong>.</p>
+        <h3>GEO API</h3>
+        <text>Your ip address is <b>{{ ip }}</b></text><br/>
+        <text>You are in <strong>{{ city }} , {{ state }}, {{ country }}</strong> - capital: <strong>{{ capital }}</strong>.</text><br/>
+        <text>The native language is <b>{{ language }}</strong><br/>
     </div>
     <script>
       function initMap() {
